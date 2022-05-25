@@ -75,28 +75,39 @@
             num1 = int(number1.value)
             num2 = int(number2.value)
             operacao = num1 + num2
+            op.element.classList.remove("alert-primary")
+            op.element.classList.add("alert-success")
             op.write(operacao)  
 
         def subtrair(*args, **kwargs):
             num1 = int(number1.value)
             num2 = int(number2.value)
             operacao = num1 - num2
+            op.element.classList.remove("alert-primary")
+            op.element.classList.add("alert-success")
             op.write(operacao)  
 
         def multiplicar(*args, **kwargs):
             num1 = int(number1.value)
             num2 = int(number2.value)
             operacao = num1 * num2
+            op.element.classList.remove("alert-primary")
+            op.element.classList.add("alert-success")
             op.write(operacao)  
 
         def dividir(*args, **kwargs):
             num1 = int(number1.value)
             num2 = int(number2.value)
             operacao = num1 / num2
+            op.element.classList.remove("alert-primary")
+            op.element.classList.add("alert-success")
             op.write(operacao)  
+            
 
         def limpar(*args, **kwargs):
             op.write('0')
+            op.element.classList.remove("alert-success")
+            op.element.classList.add("alert-primary")
             num1.clear()
             num2.clear()
     </py-script>
