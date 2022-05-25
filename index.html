@@ -21,7 +21,7 @@
                 margin: 0 auto;
                 text-align: center;
             }
-            
+
             input{
                 text-align: center;
                 width: 49%;
@@ -52,7 +52,7 @@
                     <div class="col-sm">
                         <h2>Resultado</h2>
                         <hr>
-                        <p>>> <span id="result"></span> <<</p>
+                        <p><span id="result" class="alert alert-primary"></span></p>
                         <hr>
                     </div> <!-- col-sm -->
                 </div> <!-- row -->
@@ -65,10 +65,10 @@
         # Em js seria o getElemntbyId
         number1 = Element("number1")
         number2 = Element("number2")
-        op = Element('result')
+        op = Element('result')  
         
         # Valor Default no 'Result'
-        op.write('0')  
+        op.write('0')
 
         # Funções ao apertar o botão
         def somar(*args, **kwargs):
@@ -96,7 +96,7 @@
             op.write(operacao)  
 
         def limpar(*args, **kwargs):
-            op.write('0')  
+            op.write('0')
             num1.clear()
             num2.clear()
     </py-script>
