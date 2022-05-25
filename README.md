@@ -1,4 +1,4 @@
-# pyscript-app
+# py-calc-pyscript
 primeira aplicacao com pyscript
 
 Simples calculadora
