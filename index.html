@@ -65,38 +65,38 @@
 </body>
 
 <py-script >
+
     number1 = Element("number1")
     number2 = Element("number2")
     op = Element('result')
-
     op.write('0')  
 
     def somar(*args, **kwargs):
         num1 = int(number1.value)
         num2 = int(number2.value)
-        soma = num1 + num2
-        op.write(soma)  
+        operacao = num1 + num2
+        op.write(operacao)  
     
     def subtrair(*args, **kwargs):
         num1 = int(number1.value)
         num2 = int(number2.value)
-        soma = num1 - num2
-        op.write(soma)  
+        operacao = num1 - num2
+        op.write(operacao)  
 
     def multiplicar(*args, **kwargs):
         num1 = int(number1.value)
         num2 = int(number2.value)
-        soma = num1 * num2
-        op.write(soma)  
+        operacao = num1 * num2
+        op.write(operacao)  
 
     def dividir(*args, **kwargs):
         num1 = int(number1.value)
         num2 = int(number2.value)
-        soma = num1 / num2
-        op.write(soma)  
+        operacao = num1 / num2
+        op.write(operacao)  
 
     def limpar(*args, **kwargs):
-        op.clear()
+        op.write('0')  
         num1.clear()
         num2.clear()
 </py-script>
