@@ -27,6 +27,10 @@
                 width: 49%;
                 height: 2rem;
             }
+            
+            p #result {
+                padding: 0.5rem 7.1rem;
+            }
         </style>
     </head>
     <body>
@@ -52,7 +56,7 @@
                     <div class="col-sm">
                         <h2>Resultado</h2>
                         <hr>
-                        <p><span id="result" class="alert alert-primary"></span></p>
+                        <p id="resu"><span id="result" class="alert alert-primary"></span></p>
                         <hr>
                     </div> <!-- col-sm -->
                 </div> <!-- row -->
@@ -105,11 +109,16 @@
             
 
         def limpar(*args, **kwargs):
-            op.write('0')
-            op.element.classList.remove("alert-success")
-            op.element.classList.add("alert-primary")
-            num1.clear()
-            num2.clear()
+            num1 = int(number1.value)
+            num2 = int(number2.value)
+            if num1 == '' or num2 == '':
+                pass
+            else:
+                op.write('0')
+                op.element.classList.remove("alert-success")
+                op.element.classList.add("alert-primary")
+                number1.clear()
+                number2.clear()
     </py-script>
 
 </html>
