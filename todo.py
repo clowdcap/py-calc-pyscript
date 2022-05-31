@@ -10,4 +10,5 @@ def anotar(*args, **kwargs):
     output_tarefa.element.innerHTML += f'{tarefa}'+'<br>'
 
 def limpar(*args, **kwargs):
+    input_tarefa.clear()
     output_tarefa.write('')
