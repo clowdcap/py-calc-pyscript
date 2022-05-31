@@ -31,8 +31,18 @@
             p #result {
                 padding: 0.5rem 7.1rem;
             }
+
+
         </style>
+
+        <py-env>
+            - paths:
+                - calc.py
+                - todo.py
+        </py-env>
     </head>
+
+
     <body>
         <div class="container">
             <div class="center">
@@ -62,63 +72,42 @@
                 </div> <!-- row -->
             </div> <!-- center -->
         </div> <!-- container -->
+
+        <br>
+        <hr>
+        <br>
+
+
+        <div class="container">
+            <div class="center">
+                <div class="row">
+                    <div class="col">
+                        <h2>Lista</h2>
+                        <hr>
+
+                        <div class="col">
+                            <input type="text" id="input_tarefa" placeholder="Anote aqui" >
+                        </div>
+                        <div class="col">
+                            <div class="col">
+                                <br>
+                                <button class="btn btn-danger" id="btn_anotar_tarefa" type="submit" pys-onClick="limpar">Limpar</button>
+                                <button class="btn btn-primary" id="btn_limpar_tarefa" type="submit" pys-onClick="anotar">Anotar</button>
+                                </div>
+                        </div>
+                        <div class="col">
+                            <hr><br>
+                                <div class="flex flex-col text-center" style="display: flex; flex-direction: column;" id="output_tarefa"></div>
+                            <br><hr>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </body>
     
     <!-- Python - Pyscript -->
-    <py-script>
-        # Em js seria o getElemntbyId
-        number1 = Element("number1")
-        number2 = Element("number2")
-        op = Element('result')  
-        
-        # Valor Default no 'Result'
-        op.write('0')
-
-        # Funções ao apertar o botão
-        def somar(*args, **kwargs):
-            num1 = int(number1.value)
-            num2 = int(number2.value)
-            operacao = num1 + num2
-            op.element.classList.remove("alert-primary")
-            op.element.classList.add("alert-success")
-            op.write(operacao)  
-
-        def subtrair(*args, **kwargs):
-            num1 = int(number1.value)
-            num2 = int(number2.value)
-            operacao = num1 - num2
-            op.element.classList.remove("alert-primary")
-            op.element.classList.add("alert-success")
-            op.write(operacao)  
-
-        def multiplicar(*args, **kwargs):
-            num1 = int(number1.value)
-            num2 = int(number2.value)
-            operacao = num1 * num2
-            op.element.classList.remove("alert-primary")
-            op.element.classList.add("alert-success")
-            op.write(operacao)  
-
-        def dividir(*args, **kwargs):
-            num1 = int(number1.value)
-            num2 = int(number2.value)
-            operacao = num1 / num2
-            op.element.classList.remove("alert-primary")
-            op.element.classList.add("alert-success")
-            op.write(operacao)  
-            
-
-        def limpar(*args, **kwargs):
-            num1 = int(number1.value)
-            num2 = int(number2.value)
-            if num1 == '' or num2 == '':
-                pass
-            else:
-                op.write('0')
-                op.element.classList.remove("alert-success")
-                op.element.classList.add("alert-primary")
-                number1.clear()
-                number2.clear()
-    </py-script>
-
+    <py-script src="calc.py">  </py-script>
+    <py-script src="todo.py">  </py-script>
 </html>
