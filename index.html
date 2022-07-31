@@ -1,28 +1,76 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-        <py-env>
-            - numpy
-            - matplotlib
-        </py-env>
-    </head>
-    <body> 
-        <h1>Ola Galera</h1>
-        <div class="plot"></div>
-        
-            <py-script output="plot"> 
-                print('Hello, World!')
 
-                import matplotlib.pyplot as plt
-                import numpy as np
+<head>
 
-                x = np.random.randn(1000)
-                y = np.random.randn(1000)
+    <title> DOM com PyScript </title>
+    <link rel='stylesheet' type='text/css' media='screen' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-                fig, ax = plt.subplots()
-                ax.scatter(x, y)
-                fig
-            </py-script> 
-    </body>
+</head>
+
+<body>
+
+<h1>Aprendendo DOM com Pyscript</h1>
+
+<h2>Python Script</h2>
+
+<br>
+
+<p>Entrada de Dados</p>
+
+<textarea name="input_text" id="input_text" placeholder="Digite seu nome...."></textarea>
+
+<br>
+
+<button id="run" type="button" class="button is-primary" pys-onClick="count">Count</button>
+<button id="upper" type="button" class="button is-primary" pys-onClick="upper">Upper</button>
+<button id="lower" type="button" class="button is-primary" pys-onClick="lower">Lower</button>
+<button id="clear" type="button" class="button is-danger" pys-onClick="clear">Clear</button>
+
+<p>Output em 🐍</p>
+
+<p id = 'output'></p>
+    
+</body>
+
+<py-script>
+
+    input_text = Element("input_text")    
+    op = Element("output")
+    op.write('Selecione a botao para ver o resultado')
+
+    def clear(*args, **kwargs):
+        if input_text.value == '':
+            op.write('')
+        else:
+            input_text.clear()
+            op.write('Texto apagado')
+
+    def count(*args, **kwargs):
+        number = len(input_text.value)
+        if number <= 0:
+            op.write('Erro, digite seu nome')
+        elif number < 10:
+            op.write(f'Nome pequeno - {number} caracteres')
+        elif number >= 10:
+            op.write(f'Nome grande - {number} caracteres')
+    
+    def upper(*args, **kwargs):
+        if input_text.value == '':
+            op.write('Erro, digite seu nome')
+        else:
+            upper_text = str(input_text.value).upper()
+            op.write(upper_text)
+
+    def lower(*args, **kwargs):
+        if input_text.value == '':
+            op.write('Erro, digite seu nome')
+        else:
+            lower_text = str(input_text.value).lower()
+            op.write(lower_text)
+
+</py-script>
+
+
 </html>
